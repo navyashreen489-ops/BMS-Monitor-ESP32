@@ -1,0 +1,58 @@
+{
+  "version": 1,
+  "author": "BMS project",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -150, "left": 260, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot2", "top": -60, "left": 260, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot3", "top": 30, "left": 260, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot4", "top": 120, "left": 260, "attrs": {} },
+    { "type": "wokwi-lcd1602", "id": "lcd1", "top": -260, "left": -40, "attrs": { "pins": "i2c" } },
+    { "type": "wokwi-relay-module", "id": "relay1", "top": 300, "left": 260, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "btn1", "top": 330, "left": -150, "attrs": { "color": "red" } },
+    { "type": "wokwi-pushbutton", "id": "btn2", "top": 330, "left": -80, "attrs": { "color": "orange" } },
+    { "type": "wokwi-pushbutton", "id": "btn3", "top": 330, "left": -10, "attrs": { "color": "yellow" } },
+    { "type": "wokwi-pushbutton", "id": "btn4", "top": 330, "left": 60, "attrs": { "color": "green" } },
+    { "type": "wokwi-pushbutton", "id": "btn5", "top": 330, "left": 130, "attrs": { "color": "blue" } },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": -150, "left": 260, "attrs": { "value": "0.75" } }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+
+    [ "pot1:SIG", "esp:D34", "green", [] ],
+    [ "pot2:SIG", "esp:D35", "green", [] ],
+    [ "pot3:SIG", "esp:D32", "green", [] ],
+    [ "pot4:SIG", "esp:D33", "green", [] ],
+    [ "pot1:VCC", "esp:3V3", "red", [] ],
+    [ "pot2:VCC", "esp:3V3", "red", [] ],
+    [ "pot3:VCC", "esp:3V3", "red", [] ],
+    [ "pot4:VCC", "esp:3V3", "red", [] ],
+    [ "pot1:GND", "esp:GND.1", "black", [] ],
+    [ "pot2:GND", "esp:GND.1", "black", [] ],
+    [ "pot3:GND", "esp:GND.1", "black", [] ],
+    [ "pot4:GND", "esp:GND.1", "black", [] ],
+
+    [ "lcd1:GND", "esp:GND.1", "black", [] ],
+    [ "lcd1:VCC", "esp:VIN", "red", [] ],
+    [ "lcd1:SDA", "esp:D21", "blue", [] ],
+    [ "lcd1:SCL", "esp:D22", "purple", [] ],
+
+    [ "relay1:VCC", "esp:VIN", "red", [] ],
+    [ "relay1:GND", "esp:GND.1", "black", [] ],
+    [ "relay1:IN", "esp:D26", "orange", [] ],
+
+    [ "btn1:1.l", "esp:D18", "red", [] ],
+    [ "btn1:2.l", "esp:GND.1", "black", [] ],
+    [ "btn2:1.l", "esp:D19", "orange", [] ],
+    [ "btn2:2.l", "esp:GND.1", "black", [] ],
+    [ "btn3:1.l", "esp:D23", "yellow", [] ],
+    [ "btn3:2.l", "esp:GND.1", "black", [] ],
+    [ "btn4:1.l", "esp:D5", "green", [] ],
+    [ "btn4:2.l", "esp:GND.1", "black", [] ],
+    [ "btn5:1.l", "esp:D4", "blue", [] ],
+    [ "btn5:2.l", "esp:GND.1", "black", [] ]
+  ],
+  "dependencies": {}
+}
