@@ -15,6 +15,13 @@ Battery Management System covering 6 tasks:
 - Press Play. Set knobs to 75% before running.
 - Add your Blynk token to secrets.h
 
+ ## Fault injection demo
+- Red button: inject frozen ADC fault
+- Orange button: relay mismatch fault
+- Yellow button: sensor spike (rejected by noise filter)
+- Green button: operator reset / acknowledge
+- Blue button: toggle Wi-Fi outage
+
 ## Hardware (simulated)
 - ESP32 DevKit
 - 4 potentiometers (battery cells)
@@ -24,3 +31,6 @@ Battery Management System covering 6 tasks:
 
 ## Tools
 ESP32, Arduino C++, Wokwi, Blynk IoT, GitHub
+
+## Blynk dashboard
+[[paste your blynk dashboard URL here](https://blynk.cloud/dashboard/775543/templates/1618357/dashboard)]
